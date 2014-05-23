@@ -1,21 +1,32 @@
 \documentclass[11pt,article,oneside]{memoir}
 \usepackage{org-preamble-xelatex}
 
-%%%  When trying to compile this with xelatex, it throws errors about
-%%%  not being able to find FontAwesome fonts. Hunting around a bit, I
-%%%  ran across this solution at StackExchange
-%%%  (https://tex.stackexchange.com/questions/132888/fontawesome-font-not-found)
-\usepackage{fontspec}
-\defaultfontfeatures{
-  Path = /opt/local/share/texmf-texlive/fonts/opentype/public/fontawesome/ }
-
-\usepackage{fontawesome,url}
+\usepackage{url}
 
 \date{}
 
 \input{vc}
 
 \begin{document}
+
+%% Choose fonts for use with xelatex
+%% Minion and Myriad are widely available, from Adobe.
+%% Pragmata is available to buy at http://www.fsd.it/fonts/pragma.htm
+%% and is worth every penny. Any good monospace font will work fine, though.
+%% Consolas or inconsolata are good alternatives.
+\setromanfont[Mapping={tex-text},
+        Numbers={OldStyle},
+        Ligatures={Common}]{Minion Pro}
+%%\setsansfont[Mapping=tex-text,
+%%        Ligatures={Common},
+%%        Colour=AA0000]{Unit-Medium}
+%%\setmonofont[Mapping=tex-text,Scale=0.72]{PragmataPro}
+
+\newfontface\scheader[SmallCapsFont={Minion Pro},SmallCapsFeatures={Letters=SmallCaps}]{Minion Pro}
+
+\newfontface\addressblock[Mapping={tex-text},
+        Numbers={OldStyle},
+        Ligatures={Common}]{Minion Pro}
 
 %% Marginal header
 %% Note: as the document goes on you may need to introduce a (gradually increasing)
@@ -47,9 +58,19 @@
 \pagestyle{kjh}
 \thispagestyle{kjhgit}
 
-Hello, world.\\
-\faTwitter
+%% Name
+\noindent{\LARGE\scheader \textsc{michael steeves}}
+\reversemarginpar
 
-%%%\marginhead{\sffamily appointments}
+\bigskip
+
+
+%% Appointments
+% \medskip
+\marginhead{\sffamily appointments}
+
+Hello, world.\\
+
+
 
 \end{document}
