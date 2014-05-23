@@ -5,6 +5,33 @@
 
 \date{}
 
+%%%------------------------------------------------------------------------
+%%% Metadata
+%%%------------------------------------------------------------------------
+
+%% Change as needed. Or just add me as a coauthor. Only some of these are
+%% used below in the hyperref declaration and address banner section.
+\def\myauthor{Michael Steeves}
+\def\mytitle{Resume}
+\def\mycopyright{\myauthor}
+\def\mykeywords{}
+\def\mybibliostyle{plain}
+\def\mybibliocommand{}
+\def\mysubtitle{}
+\def\myemail{msteeves@pair.com}
+\def\myphone{Available Upon Request}
+\def\myversion{}
+\def\myrevision{}
+
+\def\mykeywords{Michael, Steeves, Michael Steeves, CV, Resume,
+  Bioinformatics, IT, HPC}
+
+%%%------------------------------------------------------------------------
+%%% Git version tracking
+%%%------------------------------------------------------------------------
+
+%% If you don't use git or the vc package (from CTAN), comment this out.
+%% If you comment it out, be sure to remove the \rfoot comment below, too.
 \input{vc}
 
 \begin{document}
@@ -58,19 +85,53 @@
 \pagestyle{kjh}
 \thispagestyle{kjhgit}
 
+%%%------------------------------------------------------------------------
+%%% Address and contact block
+%%%------------------------------------------------------------------------
+\begin{minipage}[t]{2.95in}
+ \flushright {\footnotesize
+ Available, \\ \vspace{-0.05in} Upon Request.}
+  
+\end{minipage}
+\hfill
+%\begin{minipage}[t]{0.0in}
+% dummy (needed here)
+%\end{minipage}
+\hfill
+\begin{minipage}[t]{1.3in}
+  \flushright \footnotesize \addressblock \myphone \\
+  {\scriptsize \texttt{\href{mailto:\myemail}{\myemail}}}
+\end{minipage}
+
+\medskip
+
 %% Name
 \noindent{\LARGE\scheader \textsc{michael steeves}}
 \reversemarginpar
 
 \bigskip
 
+%% Skills
+\marginhead{\sffamily skills}
 
-%% Appointments
+\ind HPC; Linux/Unix; OS X; AWS; SAN/NAS; Chef; R; C/C++; Python; Bash
+
+\bigskip
+
+%% Employment History
 % \medskip
-\marginhead{\sffamily appointments}
+\marginhead{\sffamily employment}
 
 Hello, world.\\
 
+\bigskip
 
+%% Education
+
+\marginhead{\sffamily {{\vskip -0.23em} education}}
+
+\ind Master of Science --- Bioinformatics, Brandeis University, February 2014
+
+\ind Bachelor of Science --- Mathematics, University of Massachusetts at Lowell, 1997
 
 \end{document}
