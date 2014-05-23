@@ -37,6 +37,16 @@
 \def\labelitemi{~}
 \renewcommand{\labelitemii}{~}
 
+%%%------------------------------------------------------------------------
+%%% Page layout
+%%%------------------------------------------------------------------------
+
+% These lines will insert git revision info in the footer, using the vc
+% package---see docs for vc package for details. Comment out this line
+% if you're not using vc, and also remove the \input{vc} line above.
+\pagestyle{kjh}
+\thispagestyle{kjhgit}
+
 Hello, world.\\
 \faTwitter
 
