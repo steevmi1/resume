@@ -1,15 +1,56 @@
-\documentclass[11pt,article,oneside]{memoir}
-\usepackage{org-preamble-xelatex}
+%%% A template to produce a nice-looking Curriculum Vitae.
+%%% Kieran Healy <kjhealy@gmail.com>
+%%% Most recent version is at http://kjhealy.github.com/kjh-vita
+%%%
+%%% ------------------------------------------------------------------------
+%%% Requirements that are included in a modern tex distribution:
+%%% ------------------------------------------------------------------------
+%%% xelatex
+%%% fontspec.sty
+%%% hyperrref.sty
+%%% xunicode.sty
+%%% color.sty
+%%% url.sty
+%%% fancyhdr.sty
+%%% memoir.cls
+%%% fontawesome.sty
+%%%
+%%% 
+%%% 
+%%% ------------------------------------------------------------------------
+%%% Requirements from https://github.com/kjhealy/latex-custom-kjh
+%%% ------------------------------------------------------------------------
+%%% org-preamble-xelatex.sty
+%%% memoir-article-styles.sty
+%%%
+%%% ------------------------------------------------------------------------
+%%% Optional
+%%% ------------------------------------------------------------------------
+%%% git
+%%% vc.sty
+%%% revnum.sty
+%%% Fonts
+%%%
+%%% ------------------------------------------------------------------------
+%%% Note
+%%%------------------------------------------------------------------------
+%%% Because this is a hand-tweaked file, be on the look out for \medksip, 
+%%% \bigskip and \newpage commands here and there, which are used to balance
+%%% the layout or avoid widows & orphans, etc. You should of course add or 
+%%% remove these as needed.
+%%%------------------------------------------------------------------------
 
-\usepackage{url}
+\documentclass[11pt,article,oneside]{memoir}   
+\usepackage{org-preamble-xelatex} 
+\usepackage{fontawesome,url}
 
-\date{}
+\usepackage[top=1.5in,bottom=1.5in]{geometry}
 
 %%%------------------------------------------------------------------------
 %%% Metadata
 %%%------------------------------------------------------------------------
 
-%% Change as needed. Or just add me as a coauthor. Only some of these are
+%% Change as needed. Or just add me as a coauthor. Only some of these are 
 %% used below in the hyperref declaration and address banner section.
 \def\myauthor{Michael Steeves}
 \def\mytitle{Resume}
@@ -18,47 +59,63 @@
 \def\mybibliostyle{plain}
 \def\mybibliocommand{}
 \def\mysubtitle{}
+\def\myaffiliation{Some Affiliation}
+\def\myaddress{Some Address}
 \def\myemail{msteeves@pair.com}
-\def\myphone{\_\_PHONE NUMBER\_\_}
+\def\myweb{http://steeves.io}
+\def\myphone{(508) 728-6592}
+\def\myfax{(508) 230-8062}
+\def\mytwitter{@steevmi1}
 \def\myversion{}
 \def\myrevision{}
 
-\def\mykeywords{Michael, Steeves, Michael Steeves, CV, Resume,
-  Bioinformatics, IT, HPC}
 
-%%%------------------------------------------------------------------------
-%%% Git version tracking
+\def\myaffiliation{Some Affiliation}
+\def\myauthor{Michael Steeves}
+\date{} % not used (revision control instead)
+\def\mykeywords{Michael Steeves, Vita, CV, Resume, HPC, Scientific Computing}
+
+%%%------------------------------------------------------------------------  
+%%% Git version tracking 
 %%%------------------------------------------------------------------------
 
 %% If you don't use git or the vc package (from CTAN), comment this out.
 %% If you comment it out, be sure to remove the \rfoot comment below, too.
 \input{vc}
 
+%%%------------------------------------------------------------------------
+%%% Document
+%%%------------------------------------------------------------------------
 \begin{document}
 
 %% Choose fonts for use with xelatex
-%% Minion and Myriad are widely available, from Adobe.
+%% Minion and Myriad are widely available, from Adobe. 
 %% Pragmata is available to buy at http://www.fsd.it/fonts/pragma.htm
 %% and is worth every penny. Any good monospace font will work fine, though.
 %% Consolas or inconsolata are good alternatives.
-\setromanfont[Mapping={tex-text},
-        Numbers={OldStyle},
-        Ligatures={Common}]{Minion Pro}
-%%\setsansfont[Mapping=tex-text,
-%%        Ligatures={Common},
-%%        Colour=AA0000]{Unit-Medium}
-%%\setmonofont[Mapping=tex-text,Scale=0.72]{PragmataPro}
+\setromanfont[Mapping={tex-text}, 
+	Numbers={OldStyle},
+	Ligatures={Common}]{Minion Pro}
+\setsansfont[Mapping=tex-text,
+	Ligatures={Common}, 
+	Colour=AA0000]{Myriad Pro}
+\setmonofont[Mapping=tex-text,Scale=0.72]{Inconsolata} 
 
 \newfontface\scheader[SmallCapsFont={Minion Pro},SmallCapsFeatures={Letters=SmallCaps}]{Minion Pro}
 
-\newfontface\addressblock[Mapping={tex-text},
-        Numbers={OldStyle},
-        Ligatures={Common}]{Minion Pro}
+\newfontface\addressblock[Mapping={tex-text}, 
+	Numbers={OldStyle},
+	Ligatures={Common}]{Minion Pro}
+
+
+%%%------------------------------------------------------------------------
+%%% Local commands
+%%%------------------------------------------------------------------------
 
 %% Marginal header
 %% Note: as the document goes on you may need to introduce a (gradually increasing)
-%% \vspace element to keep the marginal header pleasingly aligned with the first
-%% item in the body text. Like this: \marginhead{{\vskip 0.4em}Grants}, or
+%% \vspace element to keep the marginal header pleasingly aligned with the first 
+%% item in the body text. Like this: \marginhead{{\vskip 0.4em}Grants}, or 
 %% \marginhead{{\vskip 0.8em}Service}. Experiment as needed.
 \newcommand{\marginhead}[1]{\marginpar{\textsf{{\footnotesize\vspace{-1em}\flushright #1}}}}
 
@@ -67,7 +124,7 @@
 % \newcommand{\amper}{{\fontspec[Scale=.95,Colour=AA0000]{Minion Pro Medium}\selectfont\&\,}}
 
 %% No bullets on labels
-\renewcommand{\labelitemi}{~}
+\renewcommand{\labelitemi}{~} 
 
 %% Custom hanging indent for vita items
 \def\ind{\hangindent=1 true cm\hangafter=1 \noindent}
@@ -85,96 +142,48 @@
 \pagestyle{kjh}
 \thispagestyle{kjhgit}
 
+
 %%%------------------------------------------------------------------------
 %%% Address and contact block
 %%%------------------------------------------------------------------------
 \begin{minipage}[t]{2.95in}
- \flushright {\footnotesize
- \_\_STREET\_\_ \\ \vspace{-0.05in} \_\_CITY\_\_ \textsc{\_\_STATE\_\_} \_\_ZIP\_\_}
+ \flushright {\footnotesize 
+ 4 Pierce Way, \\ \vspace{-0.05in} North Easton, \textsc{ma} 02356.}  
   
 \end{minipage}
-\hfill
+\hfill     
 %\begin{minipage}[t]{0.0in}
 % dummy (needed here)
 %\end{minipage}
 \hfill
 \begin{minipage}[t]{1.3in}
-  \flushright \footnotesize \addressblock \myphone \\
-  {\scriptsize \texttt{\href{mailto:\myemail}{\myemail}}}
+  \flushright \footnotesize  \addressblock \myphone \, \faPhone \\ 
+%%  {\scriptsize  \texttt{\href{http://twitter.com/steevmi1}{\mytwitter}} \, \faTwitter }  \\ 
+  {\scriptsize  \texttt{\href{mailto:\myemail}{\myemail}} \, \faEnvelope} \\
+%%  {\scriptsize  \texttt{\href{\myweb}{\myweb}} \, \faGlobe}
 \end{minipage}
 
 \medskip
 
-%% Name
+%% Name 
 \noindent{\LARGE\scheader \textsc{michael steeves}}
 \reversemarginpar
 
-\bigskip
+\bigskip       
 
-%% Skills
-\marginhead{\sffamily skills}
 
-\noindent HPC and IT infrastructure services; Linux/Unix/OS X; AWS;
-SAN/NAS; Chef; R; C/C++; Python; Bash; SGE/UGE queueing system
-
-\bigskip
-
-%% Employment History
+%% Objective
 % \medskip
-\marginhead{\sffamily employment}
+\marginhead{\sffamily objective}
 
-\ind \textbf{Novartis Institute for BioMedical Research, Inc.} (July 2006 --- present)
+\ind A position to help support new and innovative science through the application of advanced and high performance computing, and to define the next generation of computational solutions to scientific problems.
 
-\noindent\textit{Scientific Computing Group} (August 2010 -- present)
-Support HPC environment for NIBR scientists world-wide, including
-systems, applications and workflows. Technical lead for AWS cloud and
-Hadoop environments. Analytics lead on social data analytics
-project. Global application service manager for R.
+\bigskip
 
-\ind \hspace{0.35in} \footnotesize 2013 Presenter at AWS
-re:Invent\newline 2012 Global IT Innovation Award:
-\textit{Software Engineering in the Cloud}.\newline 2012 Promotion to
-Engineer/Senior Systems Specialist\newline 2011 Global IT
-Innovation Award: \textit{Cloud-based High Throughut Docking}
-\normalsize \vspace{0.05in}
+%% Summary
+\marginhead{\sffamily summary}
 
-\noindent\textit{Advanced Computing Services} (July 2006 -- August
-2010) Site support for 1600 users, 400 servers and over 200 TB of
-storage. IT lead in migrating Oracle RAC from NAS to SAN using OCFS2
-and ASM on blade hardware. Lead for Nagios, Splunk, Cambridge business
-continuity planning and global user account harmonization.
-
-\ind\textbf{Tufts University} (Oct 2004 -- July 2006)
-
-\noindent\textit{Unix Network Administrator} Member of 4 person team
-responsible for infrastructure (e-mail, user accounts, web services,
-50 servers, over 100 desktops, class/lab computing, storage/backup and
-network) for ECE and CS departments.
-
-\ind \textbf{Vertex Pharmaceuticals} (2001 -- Oct 2004)
-
-\noindent\textit{Senior Unix System Administrator} Responsible for
-Unix infrastructure (scientific servers/workstations, FDA-regulated
-servers, e-mail infrastructure and 50-node Linux parallel compute
-cluster), SAN and NAS storage.
-
-\ind \textbf{GTE Internetworking/Genuity} (July 1999 - 2001)
-
-\noindent\textit{Unix System Administrator} Responsible for a dozen
-servers and over 150 desktops for several engineering departments,
-including e-mail and user accounts.
-
-\ind \textbf{Applix, Inc.} (March 1996 -- July 1999)
-
-\noindent\textit{System and Network Engineer} (November 1998 -- July
-1999) Responsible for heterogeneous Unix server and workstation
-environment, LAN/WAN network, e-mail and PBX/Meridian Mail for
-corporate headquarters and internal support for networks, phone
-system, servers and Applixware and remote assistance to European
-offices.
-
-\noindent\textit{Customer Support Engineer} (March 1996 -- November
-1998)
+\ind Senior technologist with extensive experience working in the life sciences and pharmaceutical industry helping to define and build consensus around solutions.
 
 \bigskip
 
@@ -182,8 +191,139 @@ offices.
 
 \marginhead{\sffamily {{\vskip -0.23em} education}}
 
-\ind Master of Science --- Bioinformatics, Brandeis University, February 2014
+%\noindent\emph{Princeton University \vspace{0.01in}}
 
-\ind Bachelor of Science --- Mathematics, University of Massachusetts at Lowell, 1997
+\ind M.S., Bioinformatics, Brandeis University, 2014.
+
+\ind B.S., Mathematics, University of Massachusetts at Lowell, 1997. 
+
+\bigskip
+ 
+%% Career
+\marginhead{\sffamily {\vskip 0.35em} employment highlights}
+\medskip
+\noindent\emph{Novartis Institutes for BioMedical Research (July, 2006 - present) \vspace{0.01in}}
+
+\ind \footnotesize Architect, Scientific Computing Engineer
+
+%%\ind  Kieran Healy. 2006. \emph{\href{http://www.lastbestgifts.com}{Last Best Gifts: Altruism and the Market for Human Blood and Organs}}. Chicago:~University of Chicago Press. \vspace{0.05in}
+
+\ind \hspace{0.35in} \footnotesize Senior member of 16 person global team providing services for high performance and scientific computing, from infrastructure design through algorithm development. Lead for informatics applications (build and support), HPC in the Cloud, and machine learning environment and strategy. Provide direction and third-level support for operational staff. Non-voting member of Intel HPC XPharma initiative.
+
+\medskip
+\ind \hspace{0.35in} \footnotesize \textbf{Awards and Presentations}
+
+\ind \hspace{0.35in} \footnotesize 2014 HPC Wire Award for Best Use of Cloud for HPC
+
+\ind \hspace{0.35in} \footnotesize 2013 \href{https://www.youtube.com/watch?v=--ALfYpw_aM}{Speaker, AWS re:Invent BDT212} \emph{Real-world Cloud HPC at Scale, for Production Workloads}
+
+\ind \hspace{0.35in} \footnotesize 2012 Novartis IT Innovation Award for HPC Cloud 
+
+\ind \hspace{0.35in} \footnotesize 2011 Novartis IT Innovation Award for Cloud Computing
+
+\medskip
+
+\ind \footnotesize Engineer, Research Computing Platforms (July, 2006 - August, 2010)
+
+\ind \hspace{0.35in} \footnotesize Site support for 1600 users, 400 servers and over 200 TB of storage. Lead for Linux DBA support, monitoring, Cambridge business continuity planning and global user account harmonization.
+
+\vspace{-0.075in}
+
+\normalsize
+
+\bigskip
+\noindent\emph{Tufts University (Oct, 2004 - July, 2006) \vspace{0.05in}}
+
+\ind \footnotesize Unix Network Administrator
+
+\ind \hspace{0.35in} \footnotesize Member of 4 person team responsible for infrastructure (e-mail, user accounts, web services, 50 servers, over 100 desktops, class/lab computing, storage/backup and network) for ECE and CS departments.
+
+\vspace{-0.075in}
+
+\normalsize
+
+\bigskip
+\noindent\emph{Vertex Pharmaceuticals (2001 - Oct, 2004) \vspace{0.05in}}
+
+\ind \footnotesize Senior Unix System Administrator
+
+\ind \hspace{0.35in} \footnotesize Responsible for Unix infrastructure (scientific servers/workstations, FDA-regulated servers, e-mail infrastructure and 50-node Linux parallel compute cluster), SAN and NAS storage.
+
+\vspace{-0.075in}
+
+\normalsize
+
+\bigskip
+\noindent\emph{GTE Internetworking/Genuity (July 1999 - 2001)}
+
+\ind \footnotesize Unix System Administrator
+
+\ind \hspace{0.35in} \footnotesize Responsible for a dozen servers and over 150 desktops for several engineering departments, including e-mail and user accounts.
+
+\vspace{-0.075in}
+
+\normalsize
+
+\bigskip
+\noindent\emph{Applix, Inc. (1996 - 1999)}
+
+\ind \footnotesize System and Network Engineer (1998 - 1999)
+
+\ind \hspace{0.35in} \footnotesize Responsible for heterogeneous Unix server and workstation environment, LAN/WAN network, e-mail and PBX/Meridian Mail for
+corporate headquarters and internal support for networks, phone system, servers and Applixware and remote assistance to European offices.
+
+\ind \footnotesize Customer Support Engineer (1996 - 1998)
+
+%% Use revnumerate environment if numbered publications are needed. 
+%% (Include it above in the preamble).
+%% \renewcommand{\labelenumi}{\textsc{a}\theenumi.}
+%% \begin{revnumerate}
+
+%\end{revnumerate}
+%\newpage
+%%\bigskip
+
+%%\noindent\emph{Book chapters \vspace{0.05in}}
+% \renewcommand{\labelenumi}{\textsc{c}\theenumi.}
+% \begin{revnumerate}
+
+%\end{revnumerate}
+
+%%\bigskip 
+
+%\newpage
+%%\noindent\emph{Essays and reviews \vspace{0.05in}}
+
+%\renewcommand{\labelenumi}{\textsc{r}\theenumi.}
+%\begin{revnumerate}
+
+% %\end{revnumerate}
+%%\bigskip
+
+%% Presentations
+%%\marginhead{\sffamily {\vskip 0.5em}selected \newline invited talks \newline since 2007}
+%%\medskip
+
+
+%%\bigskip
+
+%\newpage
+
+%%\marginhead{\sffamily {\vskip 0.5em}selected \newline conference \newline presentations \newline since 2007}
+%%\medskip
+%%
+%%\bigskip 
+
+%%\marginhead{\sffamily {\vskip 0.6em}grants,\newline honors, \newline \& awards}
+%%\medskip
+
+%%\marginhead{\sffamily {\vskip 1.12em}service to the \newline profession}
+%%\medskip
+
+%%\medskip
+%%\marginhead{{\vskip 0.9em}Service to the \newline Profession}
+%%\medskip
+
+%%\medskip
 
 \end{document}
