@@ -15,8 +15,8 @@
 %%% memoir.cls
 %%% fontawesome.sty
 %%%
-%%% 
-%%% 
+%%%
+%%%
 %%% ------------------------------------------------------------------------
 %%% Requirements from https://github.com/kjhealy/latex-custom-kjh
 %%% ------------------------------------------------------------------------
@@ -34,14 +34,14 @@
 %%% ------------------------------------------------------------------------
 %%% Note
 %%%------------------------------------------------------------------------
-%%% Because this is a hand-tweaked file, be on the look out for \medksip, 
+%%% Because this is a hand-tweaked file, be on the look out for \medksip,
 %%% \bigskip and \newpage commands here and there, which are used to balance
-%%% the layout or avoid widows & orphans, etc. You should of course add or 
+%%% the layout or avoid widows & orphans, etc. You should of course add or
 %%% remove these as needed.
 %%%------------------------------------------------------------------------
 
-\documentclass[11pt,article,oneside]{memoir}   
-\usepackage{org-preamble-xelatex} 
+\documentclass[11pt,article,oneside]{memoir}
+\usepackage{org-preamble-xelatex}
 \usepackage{fontawesome,url}
 
 \usepackage[top=1.5in,bottom=1.5in]{geometry}
@@ -50,7 +50,7 @@
 %%% Metadata
 %%%------------------------------------------------------------------------
 
-%% Change as needed. Or just add me as a coauthor. Only some of these are 
+%% Change as needed. Or just add me as a coauthor. Only some of these are
 %% used below in the hyperref declaration and address banner section.
 \def\myauthor{Michael Steeves}
 \def\mytitle{Resume}
@@ -61,7 +61,7 @@
 \def\mysubtitle{}
 \def\myaffiliation{Some Affiliation}
 \def\myaddress{Some Address}
-\def\myemail{msteeves@pair.com}
+\def\myemail{michael@steeves.io}
 \def\myweb{http://steeves.io}
 \def\myphone{(508) 728-6592}
 \def\myfax{(508) 230-8062}
@@ -75,8 +75,8 @@
 \date{} % not used (revision control instead)
 \def\mykeywords{Michael Steeves, Vita, CV, Resume, HPC, Scientific Computing}
 
-%%%------------------------------------------------------------------------  
-%%% Git version tracking 
+%%%------------------------------------------------------------------------
+%%% Git version tracking
 %%%------------------------------------------------------------------------
 
 %% If you don't use git or the vc package (from CTAN), comment this out.
@@ -89,21 +89,21 @@
 \begin{document}
 
 %% Choose fonts for use with xelatex
-%% Minion and Myriad are widely available, from Adobe. 
+%% Minion and Myriad are widely available, from Adobe.
 %% Pragmata is available to buy at http://www.fsd.it/fonts/pragma.htm
 %% and is worth every penny. Any good monospace font will work fine, though.
 %% Consolas or inconsolata are good alternatives.
-\setromanfont[Mapping={tex-text}, 
+\setromanfont[Mapping={tex-text},
 	Numbers={OldStyle},
 	Ligatures={Common}]{Minion Pro}
 \setsansfont[Mapping=tex-text,
-	Ligatures={Common}, 
+	Ligatures={Common},
 	Colour=AA0000]{Myriad Pro}
-\setmonofont[Mapping=tex-text,Scale=0.72]{Inconsolata} 
+\setmonofont[Mapping=tex-text,Scale=0.72]{Inconsolata}
 
 \newfontface\scheader[SmallCapsFont={Minion Pro},SmallCapsFeatures={Letters=SmallCaps}]{Minion Pro}
 
-\newfontface\addressblock[Mapping={tex-text}, 
+\newfontface\addressblock[Mapping={tex-text},
 	Numbers={OldStyle},
 	Ligatures={Common}]{Minion Pro}
 
@@ -114,8 +114,8 @@
 
 %% Marginal header
 %% Note: as the document goes on you may need to introduce a (gradually increasing)
-%% \vspace element to keep the marginal header pleasingly aligned with the first 
-%% item in the body text. Like this: \marginhead{{\vskip 0.4em}Grants}, or 
+%% \vspace element to keep the marginal header pleasingly aligned with the first
+%% item in the body text. Like this: \marginhead{{\vskip 0.4em}Grants}, or
 %% \marginhead{{\vskip 0.8em}Service}. Experiment as needed.
 \newcommand{\marginhead}[1]{\marginpar{\textsf{{\footnotesize\vspace{-1em}\flushright #1}}}}
 
@@ -124,7 +124,7 @@
 % \newcommand{\amper}{{\fontspec[Scale=.95,Colour=AA0000]{Minion Pro Medium}\selectfont\&\,}}
 
 %% No bullets on labels
-\renewcommand{\labelitemi}{~} 
+\renewcommand{\labelitemi}{~}
 
 %% Custom hanging indent for vita items
 \def\ind{\hangindent=1 true cm\hangafter=1 \noindent}
@@ -147,29 +147,29 @@
 %%% Address and contact block
 %%%------------------------------------------------------------------------
 \begin{minipage}[t]{2.95in}
- \flushright {\footnotesize 
- 4 Pierce Way, \\ \vspace{-0.05in} North Easton, \textsc{ma} 02356.}  
-  
+ \flushright {\footnotesize
+ 4 Pierce Way, \\ \vspace{-0.05in} North Easton, \textsc{ma} 02356.}
+
 \end{minipage}
-\hfill     
+\hfill
 %\begin{minipage}[t]{0.0in}
 % dummy (needed here)
 %\end{minipage}
 \hfill
 \begin{minipage}[t]{1.3in}
-  \flushright \footnotesize  \addressblock \myphone \, \faPhone \\ 
-%%  {\scriptsize  \texttt{\href{http://twitter.com/steevmi1}{\mytwitter}} \, \faTwitter }  \\ 
+  \flushright \footnotesize  \addressblock \myphone \, \faPhone \\
+%%  {\scriptsize  \texttt{\href{http://twitter.com/steevmi1}{\mytwitter}} \, \faTwitter }  \\
   {\scriptsize  \texttt{\href{mailto:\myemail}{\myemail}} \, \faEnvelope} \\
 %%  {\scriptsize  \texttt{\href{\myweb}{\myweb}} \, \faGlobe}
 \end{minipage}
 
 \medskip
 
-%% Name 
+%% Name
 \noindent{\LARGE\scheader \textsc{michael steeves}}
 \reversemarginpar
 
-\bigskip       
+\bigskip
 
 
 %% Objective
@@ -195,10 +195,10 @@
 
 \ind M.S., Bioinformatics, Brandeis University, 2014.
 
-\ind B.S., Mathematics, University of Massachusetts at Lowell, 1997. 
+\ind B.S., Mathematics, University of Massachusetts at Lowell, 1997.
 
 \bigskip
- 
+
 %% Career
 \marginhead{\sffamily {\vskip 0.35em} employment highlights}
 \medskip
@@ -217,7 +217,7 @@
 
 \ind \hspace{0.35in} \footnotesize 2013 \href{https://www.youtube.com/watch?v=--ALfYpw_aM}{Speaker, AWS re:Invent BDT212} \emph{Real-world Cloud HPC at Scale, for Production Workloads}
 
-\ind \hspace{0.35in} \footnotesize 2012 Novartis IT Innovation Award for HPC Cloud 
+\ind \hspace{0.35in} \footnotesize 2012 Novartis IT Innovation Award for HPC Cloud
 
 \ind \hspace{0.35in} \footnotesize 2011 Novartis IT Innovation Award for Cloud Computing
 
@@ -274,7 +274,7 @@ corporate headquarters and internal support for networks, phone system, servers 
 
 \ind \footnotesize Customer Support Engineer (1996 - 1998)
 
-%% Use revnumerate environment if numbered publications are needed. 
+%% Use revnumerate environment if numbered publications are needed.
 %% (Include it above in the preamble).
 %% \renewcommand{\labelenumi}{\textsc{a}\theenumi.}
 %% \begin{revnumerate}
@@ -289,7 +289,7 @@ corporate headquarters and internal support for networks, phone system, servers 
 
 %\end{revnumerate}
 
-%%\bigskip 
+%%\bigskip
 
 %\newpage
 %%\noindent\emph{Essays and reviews \vspace{0.05in}}
@@ -312,7 +312,7 @@ corporate headquarters and internal support for networks, phone system, servers 
 %%\marginhead{\sffamily {\vskip 0.5em}selected \newline conference \newline presentations \newline since 2007}
 %%\medskip
 %%
-%%\bigskip 
+%%\bigskip
 
 %%\marginhead{\sffamily {\vskip 0.6em}grants,\newline honors, \newline \& awards}
 %%\medskip
